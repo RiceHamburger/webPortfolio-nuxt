@@ -62,5 +62,9 @@ export default {
   },
   router: {
     linkExactActiveClass: 'active',
+  },
+  loading: {
+    color: 'blue',
+    height: '5px'
   }
 };
