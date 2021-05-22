@@ -1,4 +1,7 @@
 <script>
+import { Hooper, Slide, Pagination as HooperPagination } from 'hooper';
+import 'hooper/dist/hooper.css';
+
 export default {
   name: 'GameList',
    props:{
@@ -13,6 +16,11 @@ export default {
     strToArray(str){
       return JSON.parse(str);
     }
+  },
+  components: {
+    Hooper,
+    Slide,
+    HooperPagination
   }
 }
 </script>
@@ -60,9 +68,9 @@ export default {
                 </b-col>
 
                 <b-col sm="12">
-                    <div :id="'team-carousel_'+item.id" class="carousel slide team-carousel" data-ride="carousel" data-wow-duration="400ms" data-wow-delay="400ms">
-                        <div class="carousel-inner">
-                            <b-row class="item active" v-for="(imgArr,index) in item.imgs" :key="index">
+                    <hooper :infiniteScroll="true" :id="'team-carousel_'+item.id" class="team-carousel" data-wow-duration="400ms" data-wow-delay="400ms">
+                        <slide v-for="(imgArr,index) in item.imgs" :key="index">
+                            <b-row>
                                 <b-col sm="3" cols="6" v-for="img in imgArr" :key="img">
                                     <div class="team-single-wrapper">
                                         <div class="team-single">
@@ -78,8 +86,9 @@ export default {
                                     </div>
                                 </b-col>
                             </b-row>
-                        </div>
-                    </div>
+                        </slide>
+                        <hooper-pagination slot="hooper-addons" v-if="item.imgs.length > 1"></hooper-pagination>
+                    </hooper>
                 </b-col>
             </b-row>
         </b-container>
