@@ -3,7 +3,13 @@ import InsidePageTitle from '~/components/InsidePageTitle.vue';
 import GameList from '~/components/GameList/GameList.vue';
 export default {
   head:{
-    title: "Project | NO-DATA"
+    title: "Project | NO-DATA",
+    script: [
+      {
+        type: 'module',
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js'
+      }
+    ]
   },
   data() {
     return {
@@ -33,5 +39,5 @@ export default {
 </template>
 
 <style>
-
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css';
 </style>

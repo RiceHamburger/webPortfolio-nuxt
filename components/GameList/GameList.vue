@@ -13,7 +13,7 @@ export default {
     strToArray(str){
       return JSON.parse(str);
     }
-  },
+  }
 }
 </script>
 
@@ -40,7 +40,7 @@ export default {
                     <div class="skills overflow">
                         <h3>Project in-charge</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <li v-for="(charge, index) in strToArray(item.in_charge)" :key="index"><p><fa icon="gamepad" /><span :class="charge"></span></p></li>
+                            <li v-for="charge in item.in_charge" :key="charge"><p><fa icon="gamepad" /><span :class="charge"></span></p></li>
                         </ul>
                     </div>
                     <div class="tools overflow">
@@ -62,8 +62,8 @@ export default {
                 <b-col sm="12">
                     <div :id="'team-carousel_'+item.id" class="carousel slide team-carousel" data-ride="carousel" data-wow-duration="400ms" data-wow-delay="400ms">
                         <div class="carousel-inner">
-                            <b-row class="item active">
-                                <b-col sm="3" cols="6" v-for="(img,index) in strToArray(item.imgs)" :key="index">
+                            <b-row class="item active" v-for="(imgArr,index) in item.imgs" :key="index">
+                                <b-col sm="3" cols="6" v-for="img in imgArr" :key="img">
                                     <div class="team-single-wrapper">
                                         <div class="team-single">
                                             <div class="person-thumb">
