@@ -12,11 +12,6 @@ export default {
       }
     },
   },
-  methods: {
-    strToArray(str){
-      return JSON.parse(str);
-    }
-  },
   components: {
     Hooper,
     Slide,

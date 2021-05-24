@@ -11,7 +11,7 @@ export default {
 <template>
   <div>
     <Header></Header>
-    <Nuxt />
+    <Nuxt keep-alive />
     <Footer></Footer>
   </div>
 </template>

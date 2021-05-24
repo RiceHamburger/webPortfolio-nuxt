@@ -12,7 +12,8 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     script: [
-      { src: "https://code.jquery.com/jquery-3.3.1.min.js" }
+      { src: "https://code.jquery.com/jquery-3.3.1.min.js" },
+      { src: "https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js" }
     ]
   },
 
@@ -52,12 +53,19 @@ export default {
     ]
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     babel: {
       plugins: [["@babel/plugin-proposal-private-methods", { loose: true }]]
+    },
+    extend (config, ctx) {
+      config.node = {
+        fs: "empty"
+      }
     }
   },
   router: {
@@ -66,5 +74,10 @@ export default {
   loading: {
     color: 'blue',
     height: '5px'
-  }
+  },
+  // publicRuntimeConfig: {
+  //   axios: {
+  //     baseURL: 'http://em.no-data.xyz/api/'
+  //   }
+  // }
 };

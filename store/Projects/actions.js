@@ -31,12 +31,13 @@ export default {
           }
           newImgsArray.push(tempArray);
         }
-        // console.log(newImgsArray[0][0]);
+
         project.imgs = newImgsArray;
         resetProjetsArray.push(project);
       });
 
       commit('setApiData',{data:resetProjetsArray});
+      // console.log('action');
     } catch (error) {
       //錯誤處理
       console.log('錯誤處理',error);
