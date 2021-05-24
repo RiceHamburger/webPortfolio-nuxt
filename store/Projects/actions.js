@@ -37,7 +37,6 @@ export default {
       });
 
       commit('setApiData',{data:resetProjetsArray});
-      // console.log('action');
     } catch (error) {
       //錯誤處理
       console.log('錯誤處理',error);

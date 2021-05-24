@@ -15,10 +15,10 @@ export default {
     return {
       pageTitle:"Gallery",
       iso: null,
-      // galleries:[]
+      galleries:[]
     }
   },
-  async asyncData() {
+  async fetch() {
     try {
       const res = await apiGetGalleryData();
       let resetGalleryArray = [];
@@ -31,10 +31,8 @@ export default {
           gallery.tags = JSON.parse(element.tags);
           resetGalleryArray.push(gallery);
       });
-      //this.galleries = resetGalleryArray;
-      //console.log(this.galleries);
-      console.log('galleries');
-      return {galleries:resetGalleryArray}
+
+      this.galleries = resetGalleryArray;
     } catch (error) {
       //錯誤處理
       console.log('錯誤處理',error);
@@ -54,33 +52,29 @@ export default {
    }
   },
   activated() {
-      // if (this.$fetchState.timestamp <= Date.now() - 60000) {
-      //   this.$fetch()
-      // }
+      if (this.$fetchState.timestamp <= Date.now() - 600000) {
+        this.$fetch()
+      }
   },
   mounted() {
     this.$nextTick(function () {
 
-      let $portfolio_selectors = $('.portfolio-filter >li>a');
+      // let $portfolio_selectors = $('.portfolio-filter >li>a');
 
-      if ($portfolio_selectors.length) {
-        let $portfolio = $('.portfolio-items');
-        $portfolio.isotope({
-          itemSelector: '.portfolio-item',
-          layoutMode: 'fitRows'
-        });
-        // this.iso = new Isotope(".portfolio-items", {
-        //   itemSelector: '.portfolio-item',
-        //   layoutMode: 'fitRows'
-        // });
-        $portfolio_selectors.on('click', function() {
-            $portfolio_selectors.removeClass('active');
-            $(this).addClass('active');
-            let selector = $(this).attr('data-filter');
-            $portfolio.isotope({ filter: selector });
-            return false;
-        });
-      }
+      // if ($portfolio_selectors.length) {
+      //   let $portfolio = $('.portfolio-items');
+      //   $portfolio.isotope({
+      //     itemSelector: '.portfolio-item',
+      //     layoutMode: 'fitRows'
+      //   });
+      //   $portfolio_selectors.on('click', function() {
+      //       $portfolio_selectors.removeClass('active');
+      //       $(this).addClass('active');
+      //       let selector = $(this).attr('data-filter');
+      //       $portfolio.isotope({ filter: selector });
+      //       return false;
+      //   });
+      // }
 
     });
   },
@@ -90,7 +84,7 @@ export default {
 <template>
   <div>
     <InsidePageTitle :pageTitle="pageTitle"/>
-    <!-- <h1 v-if="$fetchState.pending">loading</h1> -->
+    <h1 v-if="$fetchState.pending">loading</h1>
     <section id="portfolio" class="margin-bottom">
         <b-container>
             <div>
