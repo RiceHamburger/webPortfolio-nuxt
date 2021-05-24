@@ -105,7 +105,7 @@ export default {
                                 </div>
                                 <div class="portfolio-view">
                                     <ul class="nav nav-pills">
-                                        <li><a :href="require('@/assets/img/illastration/'+item.img)" :data-fancybox="'example-set'" :data-title="item.title"><fa icon="eye" /></a></li>
+                                        <li><a :href="require('@/assets/img/illastration/'+item.img)" data-fancybox="example-set" :data-title="item.title"><fa icon="eye" /></a></li>
                                     </ul>
                                 </div>
                             </div>

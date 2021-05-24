@@ -6,18 +6,33 @@ export default {
   },
   data() {
     return {
-      pageTitle:"About Me"
+      pageTitle:"About Me",
     }
   },
   components: {
     InsidePageTitle
   },
   mounted() {
-    //技能進度條
-    $.each($('div.progress-bar'), function() {
-        $(this).css('width', $(this).attr('data-transition') + '%');
-    });
+    this.$progressAni.doProgress();
   },
+  middleware(context) {
+      if(process.client){
+        context.app.router.beforeEach((to, from, next) => {
+          if(from.name === 'aboutus'){
+            context.$progressAni.resetProgress();
+          }
+          next();
+        });
+
+        context.app.router.afterEach((to, from) => {
+          if(to.name === 'aboutus'){
+            setTimeout(() => {
+              context.$progressAni.doProgress();
+            }, 150);
+          }
+        })
+      }
+    }
 };
 </script>
 
