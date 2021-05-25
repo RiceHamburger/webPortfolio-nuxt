@@ -11,16 +11,15 @@ export default {
 <template>
   <div>
     <Header></Header>
-    <Nuxt keep-alive />
+    <main>
+      <Nuxt keep-alive />
+    </main>
     <Footer></Footer>
   </div>
 </template>
 
-<style>
-div#__nuxt,
-#__layout,
-#__layout > div,
-#app {
-  min-height: 100vh;
+<style lang="scss" scoped>
+main {
+		min-height: calc(100vh - 450px);
 }
 </style>
