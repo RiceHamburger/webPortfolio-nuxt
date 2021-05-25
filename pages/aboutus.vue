@@ -11,28 +11,7 @@ export default {
   },
   components: {
     InsidePageTitle
-  },
-  mounted() {
-    this.$progressAni.doProgress();
-  },
-  middleware(context) {
-      if(process.client){
-        context.app.router.beforeEach((to, from, next) => {
-          if(from.name === 'aboutus'){
-            context.$progressAni.resetProgress();
-          }
-          next();
-        });
-
-        context.app.router.afterEach((to, from) => {
-          if(to.name === 'aboutus'){
-            setTimeout(() => {
-              context.$progressAni.doProgress();
-            }, 150);
-          }
-        })
-      }
-    }
+  }
 };
 </script>
 
@@ -42,7 +21,7 @@ export default {
     <section id="aboutMe" class="padding-top margin-bottom">
         <b-container>
             <b-row>
-                <b-col md="7" class="wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <b-col md="7">
                         <b-row>
                             <b-col md="5">
                                 <b-img src="@/assets/img/aboutus/android.jpg" fluid alt=""></b-img>
@@ -59,24 +38,26 @@ export default {
                             </b-col>
                         </b-row>
                     </b-col>
-                    <b-col md="5" class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <b-col md="5">
                         <div class="our-skills">
                             <div class="single-skill">
                                 <h3 class="topZ">Art</h3>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  data-transition="65">65%</div>
+                                    <transition name="home">
+                                      <div class="progress-bar progress-bar-primary progress-65">65%</div>
+                                    </transition>
                                 </div>
                             </div>
                             <div class="single-skill">
                                 <h3>Program</h3>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  data-transition="82">82%</div>
+                                    <div class="progress-bar progress-bar-primary progress-82">82%</div>
                                 </div>
                             </div>
                             <div class="single-skill">
                                 <h3>Consolidation</h3>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-primary six-sec-ease-in-out" role="progressbar"  data-transition="40">54%</div>
+                                    <div class="progress-bar progress-bar-primary progress-54">54%</div>
                                 </div>
                             </div>
                         </div>
@@ -88,5 +69,55 @@ export default {
   </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
+
+@mixin progress-animation($duration,$fillmode: fowards) {
+  $name: progress-#{unique-id()};
+
+  @keyframes #{$name} {
+    @content;
+  }
+
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.progress-65{
+  @include progress-animation(1s) {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 65%;
+    }
+  }
+}
+
+.progress-82{
+  @include progress-animation(1s) {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 82%;
+    }
+  }
+}
+
+.progress-54{
+  @include progress-animation(1s) {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 54%;
+    }
+  }
+}
+
 </style>
