@@ -36,11 +36,13 @@ export default {
     } catch (error) {
       //錯誤處理
       console.log('錯誤處理',error);
-      // this.$notify({
-      //   group:"project",
-      //   title: 'Api',
-      //   text: error
-      // });
+      this.$notify({
+        group:"app",
+        title: 'Api error',
+        type: 'error',
+        duration: 10000,
+        text: error
+      });
     }
   },
   components: {

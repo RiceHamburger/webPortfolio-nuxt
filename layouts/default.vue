@@ -14,6 +14,7 @@ export default {
     <main>
       <Nuxt keep-alive />
     </main>
+    <notifications group="app"  position="top center"/>
     <Footer></Footer>
   </div>
 </template>

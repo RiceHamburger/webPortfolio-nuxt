@@ -40,11 +40,7 @@ export default {
     } catch (error) {
       //錯誤處理
       console.log('錯誤處理',error);
-      // this.$notify({
-      //   group:"project",
-      //   title: 'Api',
-      //   text: error
-      // });
+      return error;
     }
   }
 };

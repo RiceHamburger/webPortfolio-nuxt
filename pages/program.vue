@@ -17,7 +17,15 @@ export default {
     }
   },
   fetch() {
-    return this.$store.dispatch("Projects/handleApiData");
+    return this.$store.dispatch("Projects/handleApiData").then((res)=>{
+      this.$notify({
+        group:"app",
+        title: 'Api error',
+        type: 'error',
+        duration: 10000,
+        text: res
+      });
+    });
   },
   components: {
     InsidePageTitle,

@@ -24,13 +24,14 @@ export default {
   css: [
     '~/assets/css/animate.min.css',
     '~/assets/css/style.css',
-    '~/assets/css/responsive.css'
+    '~/assets/css/responsive.css',
+    '~/assets/css/notifications.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/aos.js', mode: 'client' },
-    // { src: '~/plugins/aboutAni.js', mode: 'client' },
+    { src: '~/plugins/notification.js'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
