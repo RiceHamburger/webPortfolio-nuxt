@@ -146,7 +146,7 @@ Translation
     padding: 10px 2px 0;
 }
 
-.pc-translation .container li button{
+.pc-translation .container li a{
     display: block;
     height: 20px;
     line-height: 1.6;
@@ -163,13 +163,13 @@ Translation
     background-color: transparent;
 }
 
-.pc-translation .container li button:hover,
-.pc-translation .container li button.active{
+.pc-translation .container li a:hover,
+.pc-translation .container li a.active{
     color: #fff;
     background-color: #0099ae;
 }
 
-.pc-translation .container li button:focus{
+.pc-translation .container li a:focus{
     text-decoration: none;
 }
 
