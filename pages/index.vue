@@ -62,7 +62,7 @@ export default {
                         </div>
                         <h2>Web</h2>
                         <p id="web-in-short">ホームページデザイン、コーディング、フロントエンド開発などIT系の作品</p>
-                        <NuxtLink to="/other" class="btn btn-common">Link</NuxtLink>
+                        <NuxtLink to="/web" class="btn btn-common">Link</NuxtLink>
                     </div>
                 </b-col>
             </b-row>

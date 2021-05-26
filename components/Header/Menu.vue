@@ -17,7 +17,7 @@ export default {};
           <b-nav-item to="/aboutus">About</b-nav-item>
           <b-nav-item to="/gallery">Gallery</b-nav-item>
           <b-nav-item to="/program">Project</b-nav-item>
-          <b-nav-item to="/other">Web Design</b-nav-item>
+          <b-nav-item to="/web">Web Design</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

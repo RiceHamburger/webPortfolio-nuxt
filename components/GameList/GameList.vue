@@ -25,10 +25,10 @@ export default {
     <section :id="'gamePortfolio_' + item.id" class="portfolio-information padding-top" v-for="item in projects" :key="item.id">
         <b-container>
             <b-row>
-                <b-col sm="6" class="wow fadeIn">
+                <b-col sm="6" data-aos="fade-in">
                     <b-img :src="require('@/assets/img/portfolio/'+item.main_img)" fluid :alt="item.title"></b-img>
                 </b-col>
-                <b-col sm="6" class="wow fadeIn">
+                <b-col sm="6" data-aos="fade-in">
                     <div class="project-name overflow">
                         <h2>{{item.title}}</h2>
                         <ul class="nav navbar-nav navbar-default">
@@ -63,7 +63,7 @@ export default {
                 </b-col>
 
                 <b-col sm="12">
-                    <hooper :infiniteScroll="true" :id="'team-carousel_'+item.id" class="team-carousel" data-wow-duration="400ms" data-wow-delay="400ms">
+                    <hooper :infiniteScroll="true" :id="'team-carousel_'+item.id" class="team-carousel" data-aos-duration="400" data-aos-delay="400">
                         <slide v-for="(imgArr,index) in item.imgs" :key="index">
                             <b-row>
                                 <b-col sm="3" cols="6" v-for="img in imgArr" :key="img">
