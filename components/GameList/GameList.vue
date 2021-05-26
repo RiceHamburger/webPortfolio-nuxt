@@ -38,12 +38,12 @@ export default {
                     </div>
                     <div class="project-info overflow">
                         <h3>Gameplay</h3>
-                        <p :id="item.description"></p>
+                        <p>{{$t(item.description)}}</p>
                     </div>
                     <div class="skills overflow">
                         <h3>Project in-charge</h3>
                         <ul class="nav navbar-nav navbar-default">
-                            <li v-for="charge in item.in_charge" :key="charge"><p><fa icon="gamepad" /><span :class="charge"></span></p></li>
+                            <li v-for="charge in item.in_charge" :key="charge"><p><fa icon="gamepad" /><span>{{$t(charge)}}</span></p></li>
                         </ul>
                     </div>
                     <div class="tools overflow">

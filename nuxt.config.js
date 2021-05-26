@@ -1,3 +1,6 @@
+import en from "./locales/en.js"
+import jp from "./locales/jp.js"
+import tw from "./locales/tw.js"
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -42,7 +45,8 @@ export default {
     "bootstrap-vue/nuxt",
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
-    'nuxt-fontawesome'
+    'nuxt-fontawesome',
+    'nuxt-i18n'
   ],
   fontawesome:{
     component: 'fa',
@@ -52,6 +56,18 @@ export default {
         icons: ['fas']
       },
     ]
+  },
+  i18n: {
+    locales: ['zh-tw', 'en', 'jp'],
+    defaultLocale: 'jp',
+    vueI18n: {
+      fallbackLocale: 'jp',
+       messages: {
+         "zh-tw": tw,
+         en: en,
+         jp: jp
+       }
+     }
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

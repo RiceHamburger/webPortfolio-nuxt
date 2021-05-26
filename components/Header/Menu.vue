@@ -13,11 +13,11 @@ export default {};
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto navbar-right">
-          <b-nav-item to="/">Home</b-nav-item>
-          <b-nav-item to="/aboutus">About</b-nav-item>
-          <b-nav-item to="/gallery">Gallery</b-nav-item>
-          <b-nav-item to="/program">Project</b-nav-item>
-          <b-nav-item to="/web">Web Design</b-nav-item>
+          <li class="nav-item"><nuxt-link :to="localePath('/')">Home</nuxt-link></li>
+          <li class="nav-item"><nuxt-link :to="localePath('/aboutus')">About</nuxt-link></li>
+          <li class="nav-item"><nuxt-link :to="localePath('/gallery')">Gallery</nuxt-link></li>
+          <li class="nav-item"><nuxt-link :to="localePath('/program')">Game</nuxt-link></li>
+          <li class="nav-item"><nuxt-link :to="localePath('/web')">Web</nuxt-link></li>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

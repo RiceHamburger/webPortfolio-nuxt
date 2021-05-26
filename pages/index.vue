@@ -21,8 +21,8 @@ export default {
                     <img src="@/assets/img/home/slider/people.png" class="slider-hill" alt="slider image">
                     <div class="slide-text">
                         <h1>Game + Create = Life</h1>
-                        <p id="in-short"></p>
-                        <NuxtLink to="/aboutus" class="btn btn-common">ABOUT ME</NuxtLink>
+                        <p>{{$t("in-short")}}</p>
+                        <nuxt-link :to="localePath('/aboutus')" class="btn btn-common">ABOUT ME</nuxt-link>
                     </div>
                 </div>
             </b-row>
@@ -40,9 +40,9 @@ export default {
                         <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="30">
                             <img src="@/assets/img/home/icon1.png" alt="">
                         </div>
-                        <h2>Art</h2>
-                        <p id="art-in-short"></p>
-                        <NuxtLink to="/gallery" class="btn btn-common">Link</NuxtLink>
+                        <h2>Gallery</h2>
+                        <p>{{$t("art-in-short")}}</p>
+                        <nuxt-link :to="localePath('/gallery')" class="btn btn-common">Link</nuxt-link>
                     </div>
                 </b-col>
                 <b-col sm="4" class="text-center padding" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="60">
@@ -50,9 +50,9 @@ export default {
                         <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="60">
                             <img src="@/assets/img/home/icon2.png" alt="">
                         </div>
-                        <h2>Project</h2>
-                        <p id="program-in-short"></p>
-                        <NuxtLink to="/program" class="btn btn-common">Link</NuxtLink>
+                        <h2>Game</h2>
+                        <p>{{$t("program-in-short")}}</p>
+                        <nuxt-link :to="localePath('/program')" class="btn btn-common">Link</nuxt-link>
                     </div>
                 </b-col>
                 <b-col sm="4" class="text-center padding" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="90">
@@ -61,8 +61,8 @@ export default {
                             <img src="@/assets/img/home/icon3.png" alt="">
                         </div>
                         <h2>Web</h2>
-                        <p id="web-in-short">ホームページデザイン、コーディング、フロントエンド開発などIT系の作品</p>
-                        <NuxtLink to="/web" class="btn btn-common">Link</NuxtLink>
+                        <p>{{$t("web-in-short")}}</p>
+                        <nuxt-link :to="localePath('/web')" class="btn btn-common">Link</nuxt-link>
                     </div>
                 </b-col>
             </b-row>

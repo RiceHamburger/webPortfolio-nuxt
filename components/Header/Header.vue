@@ -4,19 +4,19 @@
       <div class="container">
         <ul class="overflow">
           <li>
-            <button name="zh-TW">
+            <nuxt-link :to="switchLocalePath('zh-tw')">
               <span>ZH-TW</span>
-            </button>
+            </nuxt-link>
           </li>
           <li>
-            <button name="en">
+            <nuxt-link :to="switchLocalePath('en')">
               <span>EN</span>
-            </button>
+            </nuxt-link>
           </li>
           <li>
-            <button name="jp">
+            <nuxt-link :to="switchLocalePath('jp')">
               <span>JP</span>
-            </button>
+            </nuxt-link>
           </li>
         </ul>
       </div>

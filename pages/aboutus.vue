@@ -6,7 +6,7 @@ export default {
   },
   data() {
     return {
-      pageTitle:"About Me",
+      pageTitle:"About Me"
     }
   },
   components: {
@@ -16,8 +16,8 @@ export default {
 </script>
 
 <template>
-  <div>
-    <InsidePageTitle :pageTitle="pageTitle"/>
+  <div>'
+    <InsidePageTitle :pageTitle="pageTitle" :pageDescription="$t('about-title')"/>
     <section id="aboutMe" class="padding-top margin-bottom">
         <b-container>
             <b-row>
@@ -32,7 +32,7 @@ export default {
                                     Action Script3.0 / C / C++ / C# / HTML5 / CSS3(SCSS) / PHP / JavaScript / JQuery / Vue.js / Nuxt.js</p><br>
                                 <h3 class="top-zero">CONTACT</h3>
                                 <p>
-                                    <span id="contact-info"></span>
+                                    <span>{{$t("contact-info")}}</span>
                                     <br><br>
                                     x79330@gmail.com</p>
                             </b-col>

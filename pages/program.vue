@@ -33,7 +33,7 @@ export default {
 
 <template>
   <div>
-    <InsidePageTitle :pageTitle="pageTitle"/>
+    <InsidePageTitle :pageTitle="pageTitle" :pageDescription="$t('program-title')"/>
     <GameList :projects="projects"/>
   </div>
 </template>

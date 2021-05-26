@@ -1,7 +1,8 @@
 <script>
 export default {
   props:{
-    pageTitle:{type:String}
+    pageTitle:{type:String},
+    pageDescription:{type:String},
   }
 }
 </script>
@@ -13,7 +14,7 @@ export default {
                     <div class="action">
                         <b-col sm="12">
                             <h1 class="title">{{pageTitle}}</h1>
-                            <p id="about-title"></p>
+                            <p>{{pageDescription}}</p>
                         </b-col>
                     </div>
                 </b-row>

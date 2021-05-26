@@ -83,7 +83,7 @@ export default {
 
 <template>
   <div>
-    <InsidePageTitle :pageTitle="pageTitle"/>
+    <InsidePageTitle :pageTitle="pageTitle" :pageDescription="$t('gallery-title')"/>
     <h1 v-if="$fetchState.pending">loading</h1>
     <section id="portfolio" class="margin-bottom">
         <b-container>

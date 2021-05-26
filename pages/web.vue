@@ -51,7 +51,7 @@ export default {
 
 <template>
   <div>
-    <InsidePageTitle :pageTitle="pageTitle"/>
+    <InsidePageTitle :pageTitle="pageTitle" :pageDescription="$t('web-title')"/>
     <h1 v-if="$fetchState.pending">loading</h1>
     <section id="other-work">
         <b-container>
@@ -59,8 +59,8 @@ export default {
               <b-col cols="12" sm="4" md="4" v-for="(items,index) in webs" :key="index">
                 <div class="workW" v-for="item in items" :key="item.id">
                   <div class="work-img"><img :src="require('@/assets/img/webWork/'+item.img)" class="grow"/></div>
-                  <div class="work-title"><a :id="item.title" :href="item.url" target="_blank"></a></div>
-                  <div :id="item.description"></div>
+                  <div class="work-title"><a :href="item.url" target="_blank">{{$t(item.title)}}</a></div>
+                  <div>{{$t(item.description)}}</div>
                 </div>
               </b-col>
             </b-row>
