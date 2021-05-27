@@ -51,7 +51,30 @@ export default {
   methods: {
    classExtraction(item) {
       return item.tags.map(tag => tag);
-   }
+   },
+   isotope() {
+      this.iso = new Isotope(".portfolio-items", {
+        itemSelector: ".portfolio-item",
+        layoutMode: 'fitRows'
+      });
+    },
+    filter: function(slug) {
+      let oldActive = $(".portfolio-filter >li>button.btn-primary").first();
+
+      if (slug === oldActive.data("filter")) {
+        return;
+      }
+
+      let currentActive = $(".portfolio-filter >li>button" + slug).first();
+
+      currentActive.removeClass("btn-default").addClass("btn-primary");
+
+      oldActive.removeClass("btn-primary").addClass("btn-default");
+
+      this.iso.arrange({
+        filter: slug
+      });
+    }
   },
   activated() {
       if (this.$fetchState.timestamp <= Date.now() - 600000) {
@@ -60,24 +83,9 @@ export default {
   },
   mounted() {
     this.$nextTick(function () {
-
-      // let $portfolio_selectors = $('.portfolio-filter >li>a');
-
-      // if ($portfolio_selectors.length) {
-      //   let $portfolio = $('.portfolio-items');
-      //   $portfolio.isotope({
-      //     itemSelector: '.portfolio-item',
-      //     layoutMode: 'fitRows'
-      //   });
-      //   $portfolio_selectors.on('click', function() {
-      //       $portfolio_selectors.removeClass('active');
-      //       $(this).addClass('active');
-      //       let selector = $(this).attr('data-filter');
-      //       $portfolio.isotope({ filter: selector });
-      //       return false;
-      //   });
-      // }
-
+      setTimeout(()=>{
+        this.isotope();
+      }, 1000);
     });
   },
 }
@@ -91,11 +99,11 @@ export default {
         <b-container>
             <div>
                 <ul class="portfolio-filter text-center">
-                    <li><a class="btn btn-default active" href="#" data-filter="*">All</a></li>
-                    <li><a class="btn btn-default" href="#" data-filter=".illustration">Illustration</a></li>
-                    <li><a class="btn btn-default" href="#" data-filter=".sketch">Sketch</a></li>
-                    <li><a class="btn btn-default" href="#" data-filter=".Original">Original works</a></li>
-                    <li><a class="btn btn-default" href="#" data-filter=".Derivative">Derivative works</a></li>
+                    <li><button class="btn btn-primary" href="#" data-filter="*" @click="filter('*')">All</button></li>
+                    <li><button class="btn btn-default illustration" href="#" data-filter=".illustration" @click="filter('.illustration')">Illustration</button></li>
+                    <li><button class="btn btn-default sketch" href="#" data-filter=".sketch" @click="filter('.sketch')">Sketch</button></li>
+                    <li><button class="btn btn-default Original" href="#" data-filter=".Original" @click="filter('.Original')">Original works</button></li>
+                    <li><button class="btn btn-default Derivative" href="#" data-filter=".Derivative" @click="filter('.Derivative')">Derivative works</button></li>
                 </ul>
 
                 <b-row class="portfolio-items">

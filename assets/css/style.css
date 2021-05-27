@@ -457,7 +457,7 @@ h3.top-zero{
   position: relative;
 }
 
-.portfolio-filter li a {
+.portfolio-filter li button {
   border-radius: 0;
   color: #686868;
   font-size: 18px;
@@ -467,21 +467,22 @@ h3.top-zero{
   border: none;
 }
 
-.portfolio-filter li .active{
+.portfolio-filter li .btn-primary{
   background: transparent;
   box-shadow: none;
   -webkit-box-shadow: none;
 }
 
-.portfolio-filter li a:hover,
-.portfolio-filter li a:focus,
-.portfolio-filter li a.active {
+.portfolio-filter li button:hover,
+.portfolio-filter li button:focus,
+.portfolio-filter li button.btn-primary {
   background: transparent;
   box-shadow: none;
   -webkit-box-shadow: none;
+  color: #00aeef;
 }
 
-.portfolio-filter li a.active:before{
+.portfolio-filter li button.btn-primary:before{
   position: absolute;
   content: "";
   left: 0;
