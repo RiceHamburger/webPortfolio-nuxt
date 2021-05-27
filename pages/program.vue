@@ -18,6 +18,8 @@ export default {
   },
   fetch() {
     return this.$store.dispatch("Projects/handleApiData").then((res)=>{
+      if(res === undefined)return;
+
       this.$notify({
         group:"app",
         title: 'Api error',
