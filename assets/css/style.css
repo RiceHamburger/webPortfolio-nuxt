@@ -412,6 +412,7 @@ h3.top-zero{
 }
 
 .single-skill h3{
+  margin-top: 20px;
   font-size: 16px;
 }
 
@@ -646,44 +647,61 @@ h3.top-zero{
   margin-bottom: 15px;
 }
 
+.portfolio-information .hooper{
+  height: auto;
+}
+
+.portfolio-information .hooper-pagination{
+  bottom: -20px;
+}
+
+.portfolio-information .hooper-indicator{
+  border: 1px solid #0884d5;
+}
+
 /*專案負責說明*/
-.navbar-default {
+.listWrap {
   background: none;
   padding: 0;
 }
 
-.navbar-default li a,.navbar-default li p,.navbar-default li span{
+.listWrap li a,.listWrap li p,.listWrap li span{
     font-size: 12px;
     padding: 0;
     padding-right: 15px;
     color: #267dbc;
 }
 
-.navbar-default li a{
+.listWrap li a{
     display: block;
     border: 1px solid #267dbc;
     border-radius: 4px;
     padding: 2px 15px;
 }
 
-.navbar-default li p i,.navbar-default li span i{
-  padding-right: 8px;
+.listWrap li p svg,.listWrap li span svg{
+  margin-right: 8px;
 }
 
-.navbar-default li a:hover{
-/*  color: #11d5f8;*/
+.listWrap li a:hover{
     color: #fff;
     border: 1px solid #0099ae;
     background-color: #0099ae;
 }
 
-.skills .navbar-default,
-.movie .navbar-default,
-.tools .navbar-default{
+.skills .listWrap,
+.movie .listWrap,
+.tools .listWrap{
   margin-left: 35px;
 }
 
-.tools .navbar-default li p{
+.skills .listWrap li,
+.movie .listWrap li,
+.tools .listWrap li{
+  display: inline-block;
+}
+
+.tools .listWrap li p{
   font-weight: normal;
 }
 

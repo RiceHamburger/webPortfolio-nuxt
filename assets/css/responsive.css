@@ -56,7 +56,7 @@
     border-top: 0;
   }
 
-  .navbar.navbar-inverse {
+  #header .navbar-inverse {
     margin-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
@@ -211,6 +211,21 @@
     height: 255px;
   }
 
+  /* gallery */
+  .portfolio-filter li button{
+    padding: 0 0 0 17px;
+  }
+
+  .portfolio-filter li button.btn-primary:before{
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   /*project*/
   .team-single {
     /*    margin-bottom: 30px;*/
@@ -247,17 +262,17 @@
     padding-top: 50px;
   }
 
-  .skills .navbar-default,
-  .movie .navbar-default,
-  .tools .navbar-default {
+  .skills .listWrap,
+  .movie .listWrap,
+  .tools .listWrap {
     padding-left: 15px;
     margin: 7.5px 0;
   }
-  .navbar-default li {
+  .listWrap li {
     display: inline-block;
   }
 
-  .navbar-default {
+  .listWrap {
     padding: 0 0 0 15px;
   }
 

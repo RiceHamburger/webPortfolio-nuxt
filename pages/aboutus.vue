@@ -23,7 +23,7 @@ export default {
             <b-row>
                 <b-col md="7">
                         <b-row>
-                            <b-col md="5">
+                            <b-col md="5" class="aboutimg">
                                 <b-img src="@/assets/img/aboutus/android.jpg" fluid alt=""></b-img>
                             </b-col>
                             <b-col md="7">

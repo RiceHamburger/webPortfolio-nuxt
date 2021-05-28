@@ -31,8 +31,8 @@ export default {
                 <b-col sm="6" data-aos="fade-in">
                     <div class="project-name overflow">
                         <h2>{{item.title}}</h2>
-                        <ul class="nav navbar-nav navbar-default">
-                            <li><span><i><fa icon="clock" /></i>{{item.create_time}}</span>
+                        <ul class="listWrap">
+                            <li><span><fa icon="clock" />{{item.create_time}}</span>
                             </li>
                         </ul>
                     </div>
@@ -42,20 +42,20 @@ export default {
                     </div>
                     <div class="skills overflow">
                         <h3>Project in-charge</h3>
-                        <ul class="nav navbar-nav navbar-default">
+                        <ul class="listWrap">
                             <li v-for="charge in item.in_charge" :key="charge"><p><fa icon="gamepad" /><span>{{$t(charge)}}</span></p></li>
                         </ul>
                     </div>
                     <div class="tools overflow">
                         <h3>Tools</h3>
-                        <ul class="nav navbar-nav navbar-default">
+                        <ul class="listWrap">
                             <li><p><fa icon="file-code" /><span>{{item.tools}}</span></p>
                             </li>
                         </ul>
                     </div>
                     <div class="movie overflow">
                         <h3>Video</h3>
-                        <ul class="nav navbar-nav navbar-default">
+                        <ul class="listWrap">
                             <li><a class="video" data-fancybox :title="item.title" :href="item.video"><fa icon="play" /></a>
                             </li>
                         </ul>
