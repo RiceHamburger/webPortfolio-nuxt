@@ -1,5 +1,6 @@
 <script>
 import InsidePageTitle from '~/components/InsidePageTitle.vue';
+import Loading from '~/components/Loading.vue';
 import {apiGetWebData} from "~/api/index";
 export default {
   head:{
@@ -41,7 +42,8 @@ export default {
     }
   },
   components: {
-    InsidePageTitle
+    InsidePageTitle,
+    Loading
   },
   activated() {
       if (this.$fetchState.timestamp <= Date.now() - 600000) {
@@ -52,9 +54,10 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="sideWrap">
     <InsidePageTitle :pageTitle="pageTitle" :pageDescription="$t('web-title')"/>
-    <h1 v-if="$fetchState.pending">loading</h1>
+
+    <Loading :loading="$fetchState.pending" />
     <section id="other-work">
         <b-container>
             <b-row>

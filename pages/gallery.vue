@@ -1,5 +1,6 @@
 <script>
 import InsidePageTitle from '~/components/InsidePageTitle.vue';
+import Loading from '~/components/Loading.vue';
 import {apiGetGalleryData} from "~/api/index";
 export default {
   head:{
@@ -46,7 +47,8 @@ export default {
     }
   },
   components: {
-    InsidePageTitle
+    InsidePageTitle,
+    Loading
   },
   methods: {
    classExtraction(item) {
@@ -92,9 +94,9 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="sideWrap">
     <InsidePageTitle :pageTitle="pageTitle" :pageDescription="$t('gallery-title')"/>
-    <h1 v-if="$fetchState.pending">loading</h1>
+    <Loading :loading="$fetchState.pending" />
     <section id="portfolio" class="margin-bottom">
         <b-container>
             <div>

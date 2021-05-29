@@ -13,20 +13,23 @@ export default {
   },
   data() {
     return {
-      pageTitle:"Project"
+      pageTitle:"Project",
+      loading: true
     }
   },
   fetch() {
     return this.$store.dispatch("Projects/handleApiData").then((res)=>{
-      if(res === undefined)return;
-
-      this.$notify({
-        group:"app",
-        title: 'Api error',
-        type: 'error',
-        duration: 10000,
-        text: res
-      });
+      if(res === undefined){
+        this.loading = false;
+      }else{
+        this.$notify({
+          group:"app",
+          title: 'Api error',
+          type: 'error',
+          duration: 10000,
+          text: res
+        });
+      }
     });
   },
   components: {
@@ -42,8 +45,9 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="sideWrap">
     <InsidePageTitle :pageTitle="pageTitle" :pageDescription="$t('program-title')"/>
+    <Loading :loading="loading" />
     <GameList :projects="projects"/>
   </div>
 </template>
