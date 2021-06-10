@@ -2,6 +2,9 @@
 
 ## Build Setup
 
+## node 12.19.0
+## npm 7.16.0
+
 ```bash
 # install dependencies
 $ npm install
