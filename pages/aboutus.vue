@@ -28,8 +28,10 @@ export default {
                             </b-col>
                             <b-col md="7">
                                 <h3 class="top-zero">SKILLS</h3>
-                                <p>Flash / Photoshop / Illustrator / After Effects / Unity3D /
-                                    Action Script3.0 / C / C++ / C# / HTML5 / CSS3(SCSS) / PHP / JavaScript(TypeScript) / JQuery / React.js / Vue.js / Next.js / Nuxt.js</p><br>
+                                <p>
+                                  HTML5 / CSS3(SCSS) / PHP / JavaScript(TypeScript) / JQuery / React.js / Vue.js / Next.js / Nuxt.js / 
+                                  Flash / Photoshop / Illustrator / After Effects / Unity3D / Action Script3.0 / C / C++ / C#
+                                </p>
                                 <h3 class="top-zero">CONTACT</h3>
                                 <p>
                                     <span>{{$t("contact-info")}}</span>

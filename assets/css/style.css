@@ -854,6 +854,9 @@ h3.top-zero{
     font-size: 1.2em;
     font-weight: bold;
 }
+.work-title > *{
+  color: #267dbc;
+}
 
 .grow { transition: all 1s ease-in-out; }
 .grow:hover { transform: scale(1.1); }

@@ -64,7 +64,13 @@ export default {
               <b-col cols="12" sm="4" md="4" v-for="(items,index) in webs" :key="index">
                 <div class="workW" v-for="item in items" :key="item.id">
                   <div class="work-img"><img :src="require('@/assets/img/webWork/'+item.img)" class="grow"/></div>
-                  <div class="work-title"><a :href="item.url" target="_blank">{{$t(item.title)}}</a></div>
+                  <div class="work-title">
+                    <a v-if="item.url && item.url !== ''" :href="item.url" target="_blank">
+                      {{$t(item.title)}}
+                      <fa icon="link" class="fa-link" style="width: 0.6em;"/>
+                    </a>
+                    <span v-else>{{$t(item.title)}}</span>
+                  </div>
                   <div>{{$t(item.description)}}</div>
                 </div>
               </b-col>
