@@ -29,7 +29,7 @@ export default {
                             <b-col md="7">
                                 <h3 class="top-zero">SKILLS</h3>
                                 <p>Flash / Photoshop / Illustrator / After Effects / Unity3D /
-                                    Action Script3.0 / C / C++ / C# / HTML5 / CSS3(SCSS) / PHP / JavaScript / JQuery / Vue.js / Nuxt.js</p><br>
+                                    Action Script3.0 / C / C++ / C# / HTML5 / CSS3(SCSS) / PHP / JavaScript(TypeScript) / JQuery / React.js / Vue.js / Next.js / Nuxt.js</p><br>
                                 <h3 class="top-zero">CONTACT</h3>
                                 <p>
                                     <span>{{$t("contact-info")}}</span>
@@ -44,20 +44,20 @@ export default {
                                 <h3 class="topZ">Art</h3>
                                 <div class="progress">
                                     <transition name="home">
-                                      <div class="progress-bar progress-bar-primary progress-65">65%</div>
+                                      <div class="progress-bar progress-bar-primary progress-14">14%</div>
                                     </transition>
                                 </div>
                             </div>
                             <div class="single-skill">
                                 <h3>Program</h3>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-primary progress-82">82%</div>
+                                    <div class="progress-bar progress-bar-primary progress-86">86%</div>
                                 </div>
                             </div>
                             <div class="single-skill">
                                 <h3>Consolidation</h3>
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-primary progress-54">54%</div>
+                                    <div class="progress-bar progress-bar-primary progress-75">75%</div>
                                 </div>
                             </div>
                         </div>
@@ -84,38 +84,38 @@ export default {
   animation-timing-function: ease-in-out;
 }
 
-.progress-65{
+.progress-14{
   @include progress-animation(1s) {
     0% {
         width: 0%;
     }
 
     100% {
-        width: 65%;
+        width: 14%;
     }
   }
 }
 
-.progress-82{
+.progress-86{
   @include progress-animation(1s) {
     0% {
         width: 0%;
     }
 
     100% {
-        width: 82%;
+        width: 86%;
     }
   }
 }
 
-.progress-54{
+.progress-75{
   @include progress-animation(1s) {
     0% {
         width: 0%;
     }
 
     100% {
-        width: 54%;
+        width: 75%;
     }
   }
 }
